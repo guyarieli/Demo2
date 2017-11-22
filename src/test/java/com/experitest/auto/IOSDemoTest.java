@@ -23,7 +23,6 @@ public class IOSDemoTest extends BaseTest {
 		// Init application / device capabilities
 		//dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
 		//dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");
-		dc.setCapability("accessKey", "eyJ4cC51IjoxMCwieHAucCI6MiwieHAubSI6Ik1UUTVNakE1TURBMk9EZzFOQSIsImFsZyI6IkhTMjU2In0.eyJleHAiOjE4MjYyMDI2NTMsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.LJTSwKt6zZL9UByntAEQPKdkn4tzFubdVoN6O8pHqvs");
 		dc.setCapability("testName", "IOSDemoTest");
 		driver = new IOSDriver<>(new URL(getProperty("url",cloudProperties) + "/wd/hub"), dc);
 	}
