@@ -21,16 +21,26 @@ public class IOSDemoTest extends BaseTest {
 	public void setUp(@Optional("@os='ios'") String deviceQuery) throws Exception {
 		init(deviceQuery);
 		// Init application / device capabilities
-		//dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
-		//dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");
+
+		dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
+		dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");
 		dc.setCapability("testName", "IOSDemoTest");
 		driver = new IOSDriver<>(new URL("https://stage.experitest.com/wd/hub"), dc);
 	}
 
 	@Test
-	public void test() {
-		// Enter the test code
-
+	public void basic() {
+		driver.findElement(in.Repo.obj("login.Username")).sendKeys("company");
+		driver.findElement(in.Repo.obj("login.Password")).sendKeys("company");
+		driver.findElement(in.Repo.obj("login.loginButton")).click();
+		driver.findElement(in.Repo.obj("main.logoutButton")).click();
+	}
+	@Test
+	public void basicFail() {
+		driver.findElement(in.Repo.obj("login.Username")).sendKeys("company");
+		driver.findElement(in.Repo.obj("login.Password")).sendKeys("company");
+		driver.findElement(in.Repo.obj("login.loginButton")).click();
+		driver.findElement(in.Repo.obj("main.logoutButton")).click();
 	}
 
 	@AfterMethod

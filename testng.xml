@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests">
-  <test name="TestIOS">
+<suite name="Suite" parallel="tests" thread-count="5">
+  <test name="Login.basic">
   	<parameter name="deviceQuery" value="@os='ios'"/>
     <classes>
-      <class name="com.experitest.auto.IOSDemoTest"/>
+      <class name="com.experitest.auto.IOSDemoTest">
+      	<methods>
+      		<include name="basic"></include>
+      	</methods>
+      </class>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Login.basicFail">
+  	<parameter name="deviceQuery" value="@os='ios'"/>
+    <classes>
+      <class name="com.experitest.auto.IOSDemoTest">
+      	<methods>
+      		<include name="basicFail"></include>
+      	</methods>
+      </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

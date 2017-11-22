@@ -10,6 +10,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BaseTest {
 
+	protected static String accessKey = System.getenv("accessKey");
+	protected static String buildId = System.getenv("BUILD_NUMBER");
+	
 	protected DesiredCapabilities dc = new DesiredCapabilities();
 	protected Properties cloudProperties = new Properties();
 
@@ -18,6 +21,11 @@ public class BaseTest {
 		dc.setCapability("deviceQuery", adhocDevice(deviceQuery));
 		dc.setCapability("reportDirectory", "reports");
 		dc.setCapability("reportFormat", "xml");
+		dc.setCapability("stream", "Demo2");
+		if(buildId == null) {
+			buildId = "-1";
+		}
+		dc.setCapability("build", buildId);
 		String accessKey = getProperty("accessKey", cloudProperties);
 		if(accessKey != null && !accessKey.isEmpty()){
 			dc.setCapability("accessKey", getProperty("accessKey", cloudProperties));
