@@ -4,9 +4,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.Properties;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 
@@ -32,12 +35,26 @@ public class BaseTest {
 		} else {
 			dc.setCapability("user", getProperty("username", cloudProperties));
 			dc.setCapability("password", getProperty("password", cloudProperties));		}
-		
+		String cname = className.split("\\.")[className.split("\\.").length - 1];
+		dc.setCapability("testName", cname + "." + testName);
+
 		// In case your user is assign to a single project leave empty,
 		// otherwise please specify the project name
 		dc.setCapability("project", getProperty("project", cloudProperties));
 
 	}
+	String testName = "unknown";
+	String className = "unknown";
+    @BeforeMethod
+    public void handleTestMethodName(Method method)
+    {
+        testName = method.getName(); 
+        
+    }
+    @BeforeClass
+    public void beforeClass() {
+        className = this.getClass().getName();
+    }
 
 	protected String getProperty(String property, Properties props) throws FileNotFoundException, IOException {
 		if (System.getProperty(property) != null) {

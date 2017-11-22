@@ -24,7 +24,6 @@ public class IOSDemoTest extends BaseTest {
 
 		dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
 		dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");
-		dc.setCapability("testName", "IOSDemoTest");
 		driver = new IOSDriver<>(new URL("https://stage.experitest.com/wd/hub"), dc);
 	}
 
