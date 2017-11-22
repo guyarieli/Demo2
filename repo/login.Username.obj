@@ -1,0 +1,6 @@
+#Wed Nov 22 09:53:47 IST 2017
+context=NONINSTRUMENTED
+json={"nodeName"\:"XCUIElementTypeTextField","visible"\:"true","hidden"\:"false","textContext"\:"Username","knownSuperClass"\:"UITextField","uniqueKeys"\:"nodeName,textContext,label,XCElementType,name,text,placeholder,accessibilityLabel,value","label"\:"usernameTextField","dumpElementType"\:"NONINSTRUMENTED","enabled"\:"true","onScreen"\:"true","top"\:"true","XCElementType"\:"XCUIElementTypeTextField","x"\:"40","width"\:"1456","name"\:"usernameTextField","y"\:"262","text"\:"Username","placeholder"\:"Username","accessibilityLabel"\:"usernameTextField","value"\:"Username","class"\:"UIATextField","height"\:"62"}
+page=login
+by=xpath
+expression=//*[@text\='Username']

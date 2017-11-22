@@ -1,0 +1,6 @@
+#Wed Nov 22 09:54:03 IST 2017
+context=NONINSTRUMENTED
+json={"nodeName"\:"XCUIElementTypeButton","visible"\:"true","hidden"\:"false","textContext"\:"loginButton","knownSuperClass"\:"UIButton","uniqueKeys"\:"nodeName,textContext,knownSuperClass,label,XCElementType,name,text,value,class","label"\:"loginButton","dumpElementType"\:"NONINSTRUMENTED","enabled"\:"true","onScreen"\:"true","top"\:"true","XCElementType"\:"XCUIElementTypeButton","x"\:"160","width"\:"1216","name"\:"loginButton","y"\:"428","text"\:"loginButton","value"\:"loginButton","class"\:"UIAButton","height"\:"88"}
+page=login
+by=xpath
+expression=//*[@text\='loginButton']
